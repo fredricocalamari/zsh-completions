@@ -1,19 +1,4 @@
 #compdef distrobox-ephemeral
-# First make the _distrobox_images function available to the script
-# the --image optarg uses it to complete the list compatible OCIs
-# check all fpath array items for the shared functions file
-local _fp_ai
-local _db_sf_path
-
-for _fp_ai in $fpath[@]
-  do
-    if [[ -f $_fp_ai/_distrobox_shared_functions ]] then
-      _db_sf_path="$_fp_ai/_distrobox_shared_functions"
-      break
-    fi
-  done
-
-[[ -n $_db_sf_path ]] && source $_db_sf_path
 
 _distrobox-ephemeral() {
     local -a options

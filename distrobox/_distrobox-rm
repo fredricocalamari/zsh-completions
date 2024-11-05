@@ -1,17 +1,4 @@
 #compdef distrobox-rm
-# Search all fpath array items for the shared functions file
-local _fp_ai
-local _db_sf_path
-
-for _fp_ai in $fpath[@]
-  do
-    if [[ -f $_fp_ai/_distrobox_shared_functions ]] then
-      _db_sf_path="$_fp_ai/_distrobox_shared_functions"
-      break
-    fi
-  done
-# Source the shared functions file to make available for use
-[[ -n $_db_sf_path ]] && source $_db_sf_path
 
 _distrobox-rm() {
     # expl is an internal zsh array that gets passed to _arguments bts
